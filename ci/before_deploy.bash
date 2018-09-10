@@ -64,11 +64,11 @@ make_deb() {
             ;;
         aarch64*)
             architecture=arm64
-            gcc_prefix="arm-linux-gnueabihf-"
+            gcc_prefix="aarch64-linux-gnu-"
             ;;
         arm*hf)
             architecture=armhf
-            gcc_prefix="aarch64-linux-gnu-"
+            gcc_prefix="arm-linux-gnueabihf-"
             ;;
         *)
             echo "make_deb: skipping target '${TARGET}'" >&2
