@@ -82,7 +82,7 @@ deploy:
   # - encrypt it using: `travis encrypt API_KEY_HERE`
   # - paste the output below
   api_key:
-    secure: "GZL8nYk+/MZGEqejpP0UMMGVmwUEdxiF9CflFIGccu+/tznDyHnHOpyJmbH3M5IKWIxa7xFgqOE8pHuD4oQXt4mzyJGB0KMKKEFLW7ckbTYKya5bw0heKznaqGnS0Yz+vpfqYR25eiPFYCz7mDsGsCzH5QZqt3cdn9MDQGu1D0IaxPjuBNH3T9kBblR0ifBd3Diy0JYhiVcMSI3V1rkel18F1yBHO2GQ95hkWxVgjANQnefq5+zdzbx4ki539ewYENShA8N0w6ULJVY9LmWRWJIp90ggOD3JCH6Nz/fBpYBqwfABO6Dr7Csw7IRm7pM4IVkFZS1taiDYFX9thxZh3UTmI4YYtSTPxH9NGV47kxPipbf4vAXFwW+1VcHKMpBzz+5IVsHnk1Pfx9/GZsXbqXM3PUWCStec36Xtqh5vQapDKEg9khkEs4b1X7/E73gvpRuQl9gbnyufSVWgDsXIWqM+0aDbqQz1FpLmVxz6eij0cB9vR+8kbNoe/CEPHPO9ZllvAHseukOeHPzSBd8rILORXaaGmQausXz2wWgSsffUSYz4705P8joI0zFCfmkHjL+kA1ZUx5SxLCc1ID7CFFZChhAxHoPL7xc21snswwr8QeheERdwvuzKNaerBGZEw8dmMMx98YkjftIj65DDySr2mRZuufBQeQpmMhFyIT4="
+    secure: "r9uPugtJxXb62z2LOhmGc+o1Gk6+wDUaSixrS/GJRzju1uIs+ItgHqSJFHkPltDU+MEP5p9mK5kMx96HmAQfP7YQgtGYg9dlVxRvA6w+lkJ2HtpdtD2oCZIdkbGqnu+yxNSfiq1lSzaFxhGWOh8yupoAKMk5GHP1o5Ge+20m94qK8QHOjFnbN+MtdsrI4JuPPtZzQRYzJ6vOp+GhNfi12aUdbOz/lepPokvaPfO120yfJ03hAUPm3OmhOs0LL5YKhyrmXpH/gGQhhI5XC2L+dw1gWakYhh9eLDmNwMuZ8xRF+4WNqAVyaN1gjf9TATJQzmkKZy/9VyIWObmnxOjembzpmPCaRM76M02omFl2RxyXGBaCCXBzchdeFJ5pBIMl+UzEG/0VgDxyR0uUVvSNO2uNzoeW5S3M5bFaIXEnDfg3XkSHMv+4OHoJZFWZNFVrz+Gv4WhmJaqFlf5xfhXpIW7qayfIxHfwf5x5TP+8FhEBtym1qdO7wQiDdYJD0cDCmoW6gfKSSDeECiGPPbJ9JJiF+uP9I8WMZUJONk2e3nrSmIUw/FTsdRZYkjln/x2x8Te/FjmA9IfcsTlrLpJLH+hS5bAq873ERFgsH3RRi6s/LQplZkEnD3s9B+7gOod5RX2Py5+YbpHCfBwEm0T/Mpb+Pa8AzG+cGxblWssBa0s="
   # for uploading multiple files
   file_glob: true
   # NOTE explanation on each env variable
@@ -96,9 +96,10 @@ deploy:
   skip_cleanup: true
   on:
     # deploy only if we push a tag
-    tags: true
+    # tags: true
     # deploy only on stable channel that has TARGET env variable sets
     condition: $TRAVIS_RUST_VERSION = stable && $TARGET != ""
+    branch: new_deb_packages
 
 notifications:
   email:

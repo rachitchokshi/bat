@@ -59,6 +59,12 @@ make_deb() {
         i686*)
             architecture=i386
             ;;
+        aarch64*)
+            architecture=arm64
+            ;;
+        arm*hf)
+            architecture=armhf
+            ;;
         *)
             echo "make_deb: skipping target '${TARGET}'" >&2
             return 0
