@@ -96,7 +96,7 @@ deploy:
   skip_cleanup: true
   on:
     # deploy only if we push a tag
-    #tags: true
+    tags: true
     branch: armhf_deb
     # deploy only on stable channel that has TARGET env variable sets
     condition: $TRAVIS_RUST_VERSION = stable && $TARGET != ""
